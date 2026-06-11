@@ -18,7 +18,7 @@ export default function ProductsSection() {
               href={product.href}
               className="group flex flex-col items-center rounded-2xl border border-border bg-white p-5 text-center shadow-sm transition hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 transition group-hover:bg-primary-light">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-light transition group-hover:bg-primary/15">
                 <Image
                   src={product.icon}
                   alt={product.title}

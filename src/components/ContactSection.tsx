@@ -10,7 +10,7 @@ export default function ContactSection() {
         </SectionTitle>
 
         <div className="mx-auto max-w-lg">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-white p-8 shadow-xl shadow-slate-200/60 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/15 border-t-4 border-t-primary bg-white p-8 shadow-xl shadow-primary/10 md:p-10">
             <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
 
             <div className="relative">

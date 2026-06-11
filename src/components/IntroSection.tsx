@@ -8,7 +8,7 @@ export default function IntroSection() {
           ตัวแทนประกันชีวิต AIAplanner
         </SectionTitle>
 
-        <div className="glass-card mx-auto max-w-4xl space-y-5 p-8 text-base leading-relaxed text-slate-600 md:p-10">
+        <div className="glass-card mx-auto max-w-4xl space-y-5 border-primary/10 p-8 text-base leading-relaxed text-slate-600 md:p-10">
           <p>
             <strong className="text-slate-900">AIAplanner</strong> คือ
             บริการตัวแทนประกันชีวิตและที่ปรึกษาทางการเงิน

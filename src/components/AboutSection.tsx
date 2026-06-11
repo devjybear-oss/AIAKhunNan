@@ -51,7 +51,7 @@ export default function AboutSection() {
               {SERVICES.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-border bg-white px-4 py-2 text-sm text-slate-600"
+                  className="rounded-full border border-primary/20 bg-primary-light/50 px-4 py-2 text-sm text-slate-700"
                 >
                   {item}
                 </span>

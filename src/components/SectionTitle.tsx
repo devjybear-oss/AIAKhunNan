@@ -31,6 +31,9 @@ export default function SectionTitle({
       >
         {children}
       </Tag>
+      {!light && (
+        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-primary" />
+      )}
       {subtitle && (
         <p
           className={`mx-auto mt-3 max-w-2xl text-base ${

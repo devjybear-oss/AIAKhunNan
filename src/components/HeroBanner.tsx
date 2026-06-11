@@ -6,7 +6,7 @@ export default function HeroBanner() {
   return (
     <section className="mesh-bg relative overflow-hidden border-b border-border">
       <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-rose-200/30 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
 
       <div className="section-container relative grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
         <div>
