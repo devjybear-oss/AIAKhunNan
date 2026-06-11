@@ -3,34 +3,34 @@ import { FOOTER_PRODUCTS, MAIN_CONTACT } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="mt-10">
-      <section className="bg-footer-light py-8">
-        <div className="mx-auto grid max-w-[1270px] gap-8 px-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="text-center">
-            <p className="font-[family-name:var(--font-prompt)] text-xl font-bold text-primary">
-              AIAPLANNER
+    <footer className="mt-4">
+      <section className="border-t border-white/10 bg-slate-900 py-12 text-slate-300">
+        <div className="section-container grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <p className="font-[family-name:var(--font-prompt)] text-xl font-bold text-white">
+              AIA Khun Nan
             </p>
-            <p className="mt-2 text-sm text-text-muted">
-              ตัวแทนประกันชีวิต
+            <p className="mt-3 text-sm leading-relaxed">
+              ตัวแทนประกันชีวิตและที่ปรึกษาการเงิน
               <br />
-              และที่ปรึกษาการเงิน
-            </p>
-            <p className="mt-2 text-sm text-text-muted">
               {MAIN_CONTACT.name}
             </p>
-            <p className="text-sm text-text-muted">
+            <p className="mt-2 text-sm text-slate-400">
               พร้อมให้บริการคุณด้วยความเป็นมืออาชีพ
             </p>
           </div>
 
           <div>
-            <h4 className="mb-4 font-[family-name:var(--font-prompt)] text-base font-medium">
+            <h4 className="mb-4 text-sm font-semibold tracking-wide text-white uppercase">
               ผลิตภัณฑ์ยอดนิยม
             </h4>
-            <ul className="space-y-2 text-sm text-text-muted">
+            <ul className="space-y-2.5 text-sm">
               {FOOTER_PRODUCTS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-primary">
+                  <Link
+                    href={item.href}
+                    className="transition hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -39,43 +39,40 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-[family-name:var(--font-prompt)] text-base font-medium">
+            <h4 className="mb-4 text-sm font-semibold tracking-wide text-white uppercase">
               ติดต่อตัวแทนประกัน
             </h4>
-            <p className="mb-2 text-center text-sm font-medium">
+            <p className="text-sm font-medium text-white">
               {MAIN_CONTACT.name}
             </p>
-            <p className="mb-2 text-center text-xs text-text-muted">
-              เลขที่ใบอนุญาตตัวแทนประกันชีวิต : {MAIN_CONTACT.license}
+            <p className="mt-2 text-xs text-slate-400">
+              ใบอนุญาต : {MAIN_CONTACT.license}
             </p>
-            <p className="mb-3 text-center text-xs text-text-muted">
-              เลขที่ทะเบียนผู้แนะนำการลงทุน : {MAIN_CONTACT.investmentId}
+            <p className="text-xs text-slate-400">
+              ทะเบียน ก.ล.ต. : {MAIN_CONTACT.investmentId}
             </p>
-            <p className="mb-2 flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 text-sm text-gray-500">
-              โทร : {MAIN_CONTACT.phone}
-            </p>
-            <p className="flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 text-sm text-gray-500">
-              Line : {MAIN_CONTACT.line}
-            </p>
+            <div className="mt-4 space-y-2 text-sm text-slate-400">
+              <p>โทร : {MAIN_CONTACT.phone}</p>
+              <p>Line : {MAIN_CONTACT.line}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="bg-footer-bg py-6 text-center text-sm text-white">
+      <div className="bg-footer-bg py-6 text-center text-xs text-slate-400">
         <p>
-          เว็บไซต์นี้ไม่ใช่เว็บไซต์ของบริษัท เอไอเอ จำกัด (เอไอเอ) หากต้องการติดต่อ
-          เอไอเอ กรุณาคลิก{" "}
+          เว็บไซต์นี้ไม่ใช่เว็บไซต์ของบริษัท เอไอเอ จำกัด (เอไอเอ) ·{" "}
           <a
             href="http://www.aia.co.th"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sky-300 hover:underline"
+            className="text-slate-300 hover:text-white hover:underline"
           >
             www.aia.co.th
           </a>
         </p>
-        <p className="mt-2">
-          Copyright 2026 © <strong>AIAPLANNER</strong>
+        <p className="mt-2 text-slate-500">
+          Copyright 2026 © <strong className="text-slate-300">AIA Khun Nan</strong>
         </p>
       </div>
     </footer>

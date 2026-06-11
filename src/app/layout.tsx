@@ -17,9 +17,9 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "AIAplanner ตัวแทนประกันชีวิต และ ที่ปรึกษาทางการเงิน",
+  title: "AIA Khun Nan | ตัวแทนประกันชีวิต AIA",
   description:
-    "ตัวแทนประกันชีวิตและที่ปรึกษาการเงิน AIA วางแผนประกันสุขภาพ ประกันชีวิต และการออม",
+    "คุณ ศศิวิมล อนันทชาติวงศ์ ตัวแทนประกันชีวิตและที่ปรึกษาการเงิน AIA วางแผนประกันสุขภาพและประกันชีวิต",
   icons: {
     icon: "https://aiaplanner.com/wp-content/uploads/2023/05/Logo-Fav-150x150.png",
   },
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className={`${prompt.variable} ${lato.variable}`}>
-      <body className="antialiased">
+      <body className="min-h-screen antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

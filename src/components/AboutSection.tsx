@@ -1,67 +1,82 @@
 import Link from "next/link";
 import SectionTitle from "./SectionTitle";
 
+const SERVICES = [
+  "การวางแผนประกันสุขภาพ ทั้งเด็กและผู้ใหญ่",
+  "การวางแผนลดหย่อนภาษี",
+  "การวางแผนเกษียณ",
+  "วางแผนกองทุนการศึกษาลูก",
+  "วางแผนคุ้มครองค่าความสามารถ",
+  "วางแผนคุ้มครองภาระหนี้สิ้น",
+  "วางแผนการส่งต่อด้วยประกันชีวิต",
+];
+
 export default function AboutSection() {
   return (
-    <section className="bg-[#f6f6f6] py-10">
-      <div className="mx-auto max-w-[1270px] px-4">
-        <SectionTitle>เกี่ยวกับเรา</SectionTitle>
+    <section className="border-y border-border bg-white py-16 md:py-20">
+      <div className="section-container">
+        <SectionTitle subtitle="มุ่งมั่นพัฒนาเพื่อให้บริการที่ปรึกษาที่ดีที่สุด">
+          เกี่ยวกับเรา
+        </SectionTitle>
 
-        <div className="mx-auto mt-6 max-w-4xl space-y-4 text-base">
-          <p>
-            ด้วยความมุ่งมั่นและตั้งใจในการพัฒนาตนเองอย่างต่อเนื่อง
-            และต้องการยกระดับวิชาชีพตัวแทนประกันชีวิตให้เป็นที่ยอมรับ
-            และเป็นที่พึ่งของประชาชนในการวางแผนป้องกันความเสี่ยงและการเก็บออม
-            จากหลักสูตรอบรมที่ปรึกษาทางการเงิน และการวางแผนประกันทั้งภายในและภายนอกองค์กร
-          </p>
-          <p>
-            จึงทำให้เราได้รับความไว้วางใจในการวางแผนประกัน วางแผนการออม
-            การลดหย่อนภาษี การวางแผนการเงินส่วนบุคคล จากกลุ่มบุคลากรทางการแพทย์
-            ขยายไปสู่ลูกค้าหลากหลายอาชีพและหลากหลายกลุ่มธุรกิจ
-            ด้วยความเชี่ยวชาญทั้งในเรื่องของการประกันและสุขภาพ
-            ทำให้มีโอกาสได้เข้าไปบริการและแนะนำบอกต่อ
-            จนทำให้มีลูกค้าวางใจให้ดูแลบริการมากกว่า 500 ครอบครัว
-          </p>
-          <p>
-            เรามุ่งมั่นพัฒนา ยกระดับมาตรฐาน ทั้งในด้าน ความรู้ บริการ
-            และการวางแผนการเงิน การประกัน ให้ตอบโจทย์กับลูกค้า อย่างครบองค์รวม
-            การันตีด้วยคุณวุฒิ{" "}
-            <Link href="/mdrt" className="text-primary underline">
-              ตัวแทน AIA MDRT
-            </Link>{" "}
-            กว่า 7 ปีต่อเนื่อง
-            <br />
-            ซึ่งบริการที่เรามีก็ ได้แก่
-          </p>
-          <ul className="list-none space-y-1 pl-0">
-            <li>– การวางแผนประกันสุขภาพ ทั้งเด็กและผู้ใหญ่</li>
-            <li>– การวางแผนลดหย่อนภาษี</li>
-            <li>– การวางแผนเกษียณ</li>
-            <li>– วางแผนกองทุนการศึกษาลูก</li>
-            <li>– วางแผนคุ้มครองค่าความสามารถ</li>
-            <li>– วางแผนคุ้มครองภาระหนี้สิ้น</li>
-            <li>– วางแผนการส่งต่อด้วยประกันชีวิต</li>
-          </ul>
-          <p>
-            เพื่อการเงินที่มั่นคงของครอบครัวลูกค้าเราพร้อมพัฒนาอย่างไม่หยุดยั้ง
-            ผ่านตัวแทนประกันชีวิตและผู้แนะนำการลงทุนมืออาชีพ ที่ได้รับอนุญาต
-            อย่างถูกต้อง จาก{" "}
+        <div className="mx-auto grid max-w-5xl gap-8">
+          <div className="space-y-5 text-base leading-relaxed text-slate-600">
+            <p>
+              ด้วยความมุ่งมั่นและตั้งใจในการพัฒนาตนเองอย่างต่อเนื่อง
+              และต้องการยกระดับวิชาชีพตัวแทนประกันชีวิตให้เป็นที่ยอมรับ
+              และเป็นที่พึ่งของประชาชนในการวางแผนป้องกันความเสี่ยงและการเก็บออม
+            </p>
+            <p>
+              จึงทำให้เราได้รับความไว้วางใจในการวางแผนประกัน วางแผนการออม
+              และการวางแผนการเงินส่วนบุคคล จากลูกค้าหลากหลายอาชีพ
+              จนทำให้มีลูกค้าวางใจให้ดูแลบริการมากกว่า 500 ครอบครัว
+            </p>
+            <p>
+              การันตีด้วยคุณวุฒิ{" "}
+              <Link
+                href="/mdrt"
+                className="font-semibold text-primary underline-offset-2 hover:underline"
+              >
+                ตัวแทน AIA MDRT
+              </Link>{" "}
+              กว่า 7 ปีต่อเนื่อง
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-slate-50 p-6 md:p-8">
+            <h3 className="mb-4 text-lg font-semibold text-slate-900">
+              บริการที่เรามี
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {SERVICES.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border bg-white px-4 py-2 text-sm text-slate-600"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-text-muted">
+            ได้รับอนุญาตจาก{" "}
             <a
               href="https://smart.oic.or.th/EService/Menu1"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-primary hover:underline"
+              className="font-medium text-primary hover:underline"
             >
-              สำนักงานคณะกรรมการกำกับและส่งเสริมการประกอบธุรกิจประกันภัย (คปภ.)
+              คปภ.
             </a>{" "}
             และ{" "}
             <a
               href="https://market.sec.or.th/public/orap/IC01.aspx?lang=th"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-primary hover:underline"
+              className="font-medium text-primary hover:underline"
             >
-              สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ (ก.ต.ล.)
+              ก.ต.ล.
             </a>
           </p>
         </div>
