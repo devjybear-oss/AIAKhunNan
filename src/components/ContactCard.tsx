@@ -1,4 +1,4 @@
-import { MAIN_CONTACT } from "@/lib/data";
+import { LINE_URL, MAIN_CONTACT } from "@/lib/data";
 
 export default function ContactCard() {
   return (
@@ -37,10 +37,15 @@ export default function ContactCard() {
             <span>📞</span>
             <span>โทร : {MAIN_CONTACT.phone}</span>
           </div>
-          <div className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-slate-50 px-4 py-3.5 text-sm text-text-muted">
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-slate-50 px-4 py-3.5 text-sm text-text-muted transition hover:border-success/40 hover:bg-success/5 hover:text-success"
+          >
             <span>💬</span>
             <span>Line : {MAIN_CONTACT.line}</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>

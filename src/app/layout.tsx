@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree, IBM_Plex_Sans_Thai } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import LineFloat from "@/components/LineFloat";
 import { IMG } from "@/lib/assets";
 import "./globals.css";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <LineFloat />
       </body>
     </html>
   );

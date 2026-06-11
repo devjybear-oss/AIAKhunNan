@@ -71,7 +71,7 @@ export const MAIN_CONTACT = {
   license: "—",
   investmentId: "—",
   phone: "—",
-  line: "—",
+  line: "เพิ่มเพื่อน LINE",
 } as const;
 
 /** @deprecated ใช้ MAIN_CONTACT แทน */
@@ -84,4 +84,4 @@ export const FOOTER_PRODUCTS = [
   { label: "AIA CI SUPERCARE", href: "/ci-supercare" },
 ] as const;
 
-export const LINE_URL = "https://lin.ee/LfVJNWX";
+export const LINE_URL = "https://lin.ee/y5QiKTq";

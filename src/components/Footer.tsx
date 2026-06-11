@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FOOTER_PRODUCTS, MAIN_CONTACT } from "@/lib/data";
+import { FOOTER_PRODUCTS, LINE_URL, MAIN_CONTACT } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -53,7 +53,17 @@ export default function Footer() {
             </p>
             <div className="mt-4 space-y-2 text-sm">
               <p>โทร : {MAIN_CONTACT.phone}</p>
-              <p>Line : {MAIN_CONTACT.line}</p>
+              <p>
+                Line :{" "}
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary hover:underline"
+                >
+                  {MAIN_CONTACT.line}
+                </a>
+              </p>
             </div>
           </div>
         </div>
