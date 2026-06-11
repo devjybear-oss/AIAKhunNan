@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { label: "ประกันสุขภาพ AIA", href: "/health-insurance-aia" },
   { label: "รางวัล", href: "/portfolio" },
   { label: "สมัครตัวแทนขายประกัน AIA", href: "/agent" },
-  { label: "ติดต่อเรา", href: "#contact" },
+  { label: "ติดต่อเรา", href: "/contact" },
 ] as const;
 
 export const STATS = [

@@ -83,7 +83,7 @@ export default function ProductPage() {
             ปรึกษาฟรี ไม่มีค่าใช้จ่าย เราพร้อมช่วยวิเคราะห์และเสนอแผนที่เหมาะกับคุณ
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="/#contact">นัดปรึกษา</Button>
+            <Button href="/contact">นัดปรึกษา</Button>
             <Link
               href="/#products"
               className="inline-flex items-center rounded-md border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-primary-light"

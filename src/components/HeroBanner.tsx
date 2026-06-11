@@ -27,7 +27,7 @@ export default function HeroBanner() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:-translate-y-0.5 hover:bg-primary-hover"
             >
               ปรึกษาฟรี

@@ -99,7 +99,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             )}
 
             <div className="flex flex-wrap gap-3 border-t border-border pt-8">
-              <Button href="/#contact">ปรึกษาบริการนี้</Button>
+              <Button href="/contact">ปรึกษาบริการนี้</Button>
               <Link
                 href="/product"
                 className="inline-flex items-center rounded-md border border-border px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-primary/30 hover:text-primary"

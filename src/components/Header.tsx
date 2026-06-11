@@ -64,7 +64,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setMenuOpen(false)}
               className="mt-1 rounded-xl bg-white px-4 py-2 text-center text-sm font-semibold text-primary transition hover:bg-white/90 md:ml-2 md:mt-0"
             >
