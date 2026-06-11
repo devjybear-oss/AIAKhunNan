@@ -76,7 +76,7 @@ export default function ProductPage() {
 
       <section className="border-t border-border bg-footer-light py-14 md:py-16">
         <div className="section-container text-center">
-          <h2 className="font-[family-name:var(--font-prompt)] text-2xl font-semibold text-slate-900 md:text-3xl">
+          <h2 className="font-heading text-xl font-semibold text-slate-900 md:text-2xl">
             พร้อมเริ่มวางแผนแล้วหรือยัง?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-text-muted">

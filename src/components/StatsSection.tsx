@@ -11,10 +11,10 @@ export default function StatsSection() {
             key={stat.label}
             className="rounded-2xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition hover:bg-white/15"
           >
-            <p className="font-[family-name:var(--font-prompt)] text-4xl font-bold md:text-5xl">
+            <p className="font-heading text-2xl font-bold sm:text-3xl md:text-4xl">
               {stat.value}
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-white/85 md:text-base">
+            <p className="mt-2 text-xs leading-relaxed text-white/85 sm:text-sm">
               {stat.label}
             </p>
           </div>

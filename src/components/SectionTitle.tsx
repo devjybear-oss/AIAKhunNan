@@ -25,7 +25,7 @@ export default function SectionTitle({
         AIAPLANNER
       </span>
       <Tag
-        className={`text-2xl font-semibold md:text-3xl ${
+        className={`text-xl font-semibold md:text-2xl ${
           light ? "text-white" : "text-slate-900"
         }`}
       >

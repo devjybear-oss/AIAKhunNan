@@ -11,8 +11,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 shadow-md">
       <div className="hidden border-b border-white/10 bg-primary-dark md:block">
-        <div className="section-container flex items-center justify-between py-2 text-sm text-white/90">
-          <span>{MAIN_CONTACT.name} · ตัวแทนประกันชีวิต AIA</span>
+        <div className="section-container flex items-center justify-between gap-3 py-2 text-xs text-white/90 sm:text-sm">
+          <span className="truncate">{MAIN_CONTACT.name} · ตัวแทนประกันชีวิต AIA</span>
           <span className="font-medium text-white">AIA Khun Nan</span>
         </div>
       </div>

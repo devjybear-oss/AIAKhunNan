@@ -42,17 +42,17 @@ body {
   background: var(--surface-muted);
   color: var(--text);
   font-family: var(--font-lato), "IBM Plex Sans Thai", sans-serif;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.75;
-  letter-spacing: 0.01em;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-prompt), "Bai Jamjuree", sans-serif;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
 }
 
 .font-heading {

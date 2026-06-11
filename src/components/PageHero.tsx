@@ -25,11 +25,11 @@ export default function PageHero({ title, subtitle, breadcrumb }: PageHeroProps)
           </nav>
         )}
 
-        <h1 className="font-[family-name:var(--font-prompt)] text-3xl font-semibold md:text-4xl">
+        <h1 className="font-heading text-2xl font-semibold sm:text-3xl md:text-[1.75rem]">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
             {subtitle}
           </p>
         )}
