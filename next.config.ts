@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "aiaplanner.com",
         pathname: "/wp-content/**",
       },
+      {
+        protocol: "https",
+        hostname: "aiaproduct.com",
+        pathname: "/wp-content/**",
+      },
     ],
   },
 };

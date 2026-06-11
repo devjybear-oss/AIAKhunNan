@@ -1,7 +1,8 @@
-import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import FaqSection from "@/components/FaqSection";
 import HeroBanner from "@/components/HeroBanner";
 import IntroSection from "@/components/IntroSection";
+import PlanningStepsSection from "@/components/PlanningStepsSection";
 import ProductsSection from "@/components/ProductsSection";
 import StatsSection from "@/components/StatsSection";
 
@@ -12,7 +13,8 @@ export default function HomePage() {
       <IntroSection />
       <StatsSection />
       <ProductsSection />
-      <AboutSection />
+      <PlanningStepsSection />
+      <FaqSection />
       <ContactSection />
     </>
   );

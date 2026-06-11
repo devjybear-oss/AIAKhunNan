@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { MAIN_CONTACT } from "@/lib/data";
 
+const HIGHLIGHTS = [
+  { value: "500+", label: "ครอบครัวที่ดูแล" },
+  { value: "MDRT", label: "ตัวแทนมืออาชีพ" },
+  { value: "ฟรี", label: "ปรึกษาไม่มีค่าใช้จ่าย" },
+] as const;
+
 export default function HeroBanner() {
   return (
     <section className="mesh-bg relative border-b border-border">
@@ -42,25 +48,43 @@ export default function HeroBanner() {
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <div className="glass-card relative w-full max-w-sm p-6 text-center sm:max-w-md sm:p-7">
-            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary-light">
+          <div className="relative w-full max-w-sm overflow-hidden rounded-3xl shadow-2xl shadow-primary/15 sm:max-w-md">
+            <div className="relative aspect-[5/4]">
               <Image
-                src="https://aiaplanner.com/wp-content/uploads/2023/05/Logo-1.png"
-                alt="AIAPLANNER"
-                width={60}
-                height={60}
+                src="/images/goals/goal-life.jpg"
+                alt="ที่ปรึกษาประกันชีวิต AIA ให้คำปรึกษาลูกค้า"
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className="object-cover"
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary/25 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
+                <p className="text-xs font-medium uppercase tracking-wider text-white/80">
+                  AIA Khun Nan
+                </p>
+                <p className="mt-1 font-heading text-lg font-semibold leading-snug sm:text-xl">
+                  {MAIN_CONTACT.name}
+                </p>
+                <p className="mt-1 text-sm text-white/85">
+                  ตัวแทนประกันชีวิต · ที่ปรึกษาการเงิน
+                </p>
+              </div>
             </div>
-            <p className="text-xs font-semibold tracking-widest text-primary">
-              AIAPLANNER
-            </p>
-            <p className="mt-2 font-heading text-lg font-semibold text-slate-900 sm:text-xl">
-              ประกันสุขภาพ <span className="text-primary">AIA</span>
-            </p>
-            <p className="mt-3 rounded-xl bg-slate-50 px-3 py-2.5 text-xs leading-relaxed text-text-muted sm:text-sm">
-              &ldquo;เราพร้อมให้คำปรึกษาคุณอย่างมืออาชีพ&rdquo;
-            </p>
+
+            <div className="grid grid-cols-3 divide-x divide-border bg-white">
+              {HIGHLIGHTS.map((item) => (
+                <div key={item.label} className="px-2 py-4 text-center">
+                  <p className="font-heading text-base font-bold text-primary sm:text-lg">
+                    {item.value}
+                  </p>
+                  <p className="mt-0.5 text-[10px] leading-tight text-text-muted sm:text-xs">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { MAIN_CONTACT, NAV_LINKS } from "@/lib/data";
+import { IMG } from "@/lib/assets";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,11 +22,11 @@ export default function Header() {
         <div className="section-container flex h-16 items-center gap-4 md:h-[4.5rem]">
           <Link href="/" className="flex shrink-0 items-center gap-3">
             <Image
-              src="https://aiaplanner.com/wp-content/uploads/2023/05/Logo-1.png"
-              alt="AIAPLANNER"
+              src={IMG.aiaLogo}
+              alt="AIA"
               width={48}
               height={48}
-              className="rounded-xl bg-white p-0.5"
+              className="object-contain"
               priority
             />
             <div className="hidden sm:block">

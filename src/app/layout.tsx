@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree, IBM_Plex_Sans_Thai } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { IMG } from "@/lib/assets";
 import "./globals.css";
 
 const heading = Bai_Jamjuree({
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "คุณ ศศิวิมล อนันทชาติวงศ์ ตัวแทนประกันชีวิตและที่ปรึกษาการเงิน AIA วางแผนประกันสุขภาพและประกันชีวิต",
   icons: {
-    icon: "https://aiaplanner.com/wp-content/uploads/2023/05/Logo-Fav-150x150.png",
+    icon: IMG.aiaLogo,
   },
 };
 

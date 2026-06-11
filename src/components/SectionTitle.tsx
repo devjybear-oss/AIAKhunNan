@@ -22,7 +22,7 @@ export default function SectionTitle({
             : "bg-primary-light text-primary"
         }`}
       >
-        AIAPLANNER
+        AIA
       </span>
       <Tag
         className={`text-xl font-semibold md:text-2xl ${
