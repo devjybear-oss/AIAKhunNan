@@ -6,7 +6,7 @@ export default function IntroSection() {
   return (
     <section className="border-y border-border bg-gradient-to-b from-white to-[#fffafb] py-14 md:py-20">
       <div className="section-container">
-        {/* ส่วนแนะนำ AIAplanner */}
+        {/* ส่วนแนะนำ AIA Khun Nan */}
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-1.5 text-xs font-semibold text-primary shadow-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
