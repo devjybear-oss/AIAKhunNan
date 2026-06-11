@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import { Lato, Prompt } from "next/font/google";
+import { Bai_Jamjuree, IBM_Plex_Sans_Thai } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
 
-const prompt = Prompt({
+const heading = Bai_Jamjuree({
   variable: "--font-prompt",
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700"],
+  display: "swap",
 });
 
-const lato = Lato({
+const body = IBM_Plex_Sans_Thai({
   variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" className={`${prompt.variable} ${lato.variable}`}>
-      <body className="min-h-screen antialiased">
+    <html lang="th" className={`${heading.variable} ${body.variable}`}>
+      <body className="min-h-screen font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />
