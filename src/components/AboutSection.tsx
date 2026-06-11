@@ -1,15 +1,6 @@
 import Link from "next/link";
+import { PLANNING_SERVICES } from "@/lib/services";
 import SectionTitle from "./SectionTitle";
-
-const SERVICES = [
-  "การวางแผนประกันสุขภาพ ทั้งเด็กและผู้ใหญ่",
-  "การวางแผนลดหย่อนภาษี",
-  "การวางแผนเกษียณ",
-  "วางแผนกองทุนการศึกษาลูก",
-  "วางแผนคุ้มครองค่าความสามารถ",
-  "วางแผนคุ้มครองภาระหนี้สิ้น",
-  "วางแผนการส่งต่อด้วยประกันชีวิต",
-];
 
 export default function AboutSection() {
   return (
@@ -48,13 +39,14 @@ export default function AboutSection() {
               บริการที่เรามี
             </h3>
             <div className="flex flex-wrap gap-2">
-              {SERVICES.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-primary/20 bg-primary-light/50 px-4 py-2 text-sm text-slate-700"
+              {PLANNING_SERVICES.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/product/${item.slug}`}
+                  className="rounded-full border border-primary/20 bg-primary-light/50 px-4 py-2 text-sm text-slate-700 transition hover:border-primary hover:text-primary"
                 >
-                  {item}
-                </span>
+                  {item.title} {item.subtitle}
+                </Link>
               ))}
             </div>
           </div>
