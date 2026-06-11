@@ -1,19 +1,8 @@
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import HeroBanner from "@/components/HeroBanner";
-import IntroSection from "@/components/IntroSection";
-import ProductsSection from "@/components/ProductsSection";
-import StatsSection from "@/components/StatsSection";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <HeroBanner />
-      <IntroSection />
-      <StatsSection />
-      <ProductsSection />
-      <AboutSection />
-      <ContactSection />
-    </>
+    <main>
+      <h1>AIA Khun Nan</h1>
+      <p>เว็บไซต์ของฉัน</p>
+    </main>
   );
 }
