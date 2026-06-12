@@ -36,9 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className={`${heading.variable} ${body.variable}`}>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-screen w-full bg-surface-muted font-sans text-[var(--text)] antialiased">
         <Header />
-        <main>{children}</main>
+        <main className="w-full bg-surface-muted">{children}</main>
         <Footer />
         <LineFloat />
       </body>

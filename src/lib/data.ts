@@ -13,58 +13,96 @@ export const STATS = [
   { value: "1789", label: "จำนวนเงินเอาประกันภัยรวมสูงถึง (ล้านบาท)" },
 ] as const;
 
-export const PRODUCTS = [
+export type ProductItem = {
+  title: string;
+  href: string;
+  icon: string;
+};
+
+export type ProductGroup = {
+  id: string;
+  title: string;
+  subtitle: string;
+  products: ProductItem[];
+};
+
+export const PRODUCT_GROUPS: ProductGroup[] = [
   {
-    title: "ประกันสุขภาพ",
-    href: "/health-insurance-aia",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/hospital.png",
+    id: "health",
+    title: "สุขภาพ",
+    subtitle: "คุ้มครองค่ารักษา โรคร้ายแรง และอุบัติเหตุ",
+    products: [
+      {
+        title: "ประกันสุขภาพ",
+        href: "/health-insurance-aia",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/hospital.png",
+      },
+      {
+        title: "ประกันสุขภาพเด็ก",
+        href: "/kids-insurance",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/baby.png",
+      },
+      {
+        title: "ประกันโรคร้ายแรง",
+        href: "/ci",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/10/lungs.png",
+      },
+      {
+        title: "ประกันอุบัติเหตุ",
+        href: "/pa",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/wounded.png",
+      },
+    ],
   },
   {
-    title: "AIA PRESTIGE",
-    href: "/aia-prestige",
-    icon: "https://aiaplanner.com/wp-content/uploads/2021/05/rich-people-300x300.png",
+    id: "life",
+    title: "ชีวิต",
+    subtitle: "สร้างความมั่นคงและวงเงินคุ้มครองครอบครัว",
+    products: [
+      {
+        title: "ประกันชีวิต",
+        href: "/life-insurance",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/insurance.png",
+      },
+      {
+        title: "AIA PRESTIGE",
+        href: "/aia-prestige",
+        icon: "https://aiaplanner.com/wp-content/uploads/2021/05/rich-people-300x300.png",
+      },
+      {
+        title: "ประกันกลุ่ม",
+        href: "/group",
+        icon: "https://aiaplanner.com/wp-content/uploads/2020/10/group.png",
+      },
+    ],
   },
   {
-    title: "ประกันโรคร้ายแรง",
-    href: "/ci",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/10/lungs.png",
+    id: "savings",
+    title: "ออม-เกษียณ",
+    subtitle: "วางแผนออม เกษียณ และลงทุนระยะยาว",
+    products: [
+      {
+        title: "ประกันออมทรัพย์",
+        href: "/saving",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/deposit.png",
+      },
+      {
+        title: "ประกันบำนาญ",
+        href: "/annuity",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/08/elderly.png",
+      },
+      {
+        title: "UNIT LINKED",
+        href: "/unit-linked",
+        icon: "https://aiaplanner.com/wp-content/uploads/2018/10/statistics.png",
+      },
+    ],
   },
-  {
-    title: "ประกันชีวิต",
-    href: "/life-insurance",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/insurance.png",
-  },
-  {
-    title: "ประกันออมทรัพย์",
-    href: "/saving",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/deposit.png",
-  },
-  {
-    title: "ประกันสุขภาพเด็ก",
-    href: "/kids-insurance",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/baby.png",
-  },
-  {
-    title: "ประกันอุบัติเหตุ",
-    href: "/pa",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/wounded.png",
-  },
-  {
-    title: "ประกันกลุ่ม",
-    href: "/group",
-    icon: "https://aiaplanner.com/wp-content/uploads/2020/10/group.png",
-  },
-  {
-    title: "ประกันบำนาญ",
-    href: "/annuity",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/08/elderly.png",
-  },
-  {
-    title: "UNIT LINKED",
-    href: "/unit-linked",
-    icon: "https://aiaplanner.com/wp-content/uploads/2018/10/statistics.png",
-  },
-] as const;
+];
+
+export const PRODUCTS: ProductItem[] = PRODUCT_GROUPS.flatMap(
+  (group) => group.products,
+);
 
 export const MAIN_CONTACT = {
   name: "คุณ ศศิวิมล อนันทชาติวงศ์",

@@ -3,7 +3,7 @@ import Link from "next/link";
 type ButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "success";
+  variant?: "primary" | "secondary" | "success";
   className?: string;
   external?: boolean;
 };
@@ -15,12 +15,14 @@ export default function Button({
   className = "",
   external = false,
 }: ButtonProps) {
-  const base =
-    "inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 font-[family-name:var(--font-prompt)] text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:shadow-lg";
-  const colors =
-    variant === "success"
-      ? "bg-success hover:bg-success/90"
-      : "bg-primary hover:bg-primary-hover";
+  const styles = {
+    primary: "btn-primary",
+    secondary: "btn-secondary",
+    success:
+      "inline-flex items-center justify-center rounded-lg bg-success px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90",
+  };
+
+  const classes = `${styles[variant]} ${className}`;
 
   if (external) {
     return (
@@ -28,7 +30,7 @@ export default function Button({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${base} ${colors} ${className}`}
+        className={classes}
       >
         {children}
       </a>
@@ -36,7 +38,7 @@ export default function Button({
   }
 
   return (
-    <Link href={href} className={`${base} ${colors} ${className}`}>
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );

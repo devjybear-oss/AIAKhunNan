@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MAIN_CONTACT } from "@/lib/data";
+import { LINE_URL, MAIN_CONTACT } from "@/lib/data";
 
 const HIGHLIGHTS = [
   { value: "500+", label: "ครอบครัวที่ดูแล" },
@@ -10,73 +10,73 @@ const HIGHLIGHTS = [
 
 export default function HeroBanner() {
   return (
-    <section className="mesh-bg relative border-b border-border">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
+    <section className="relative overflow-hidden border-b border-border bg-white">
+      <div
+        className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/5 blur-2xl"
+        aria-hidden
+      />
 
-      <div className="section-container relative grid items-center gap-8 py-12 md:grid-cols-2 md:gap-10 md:py-16">
+      <div className="section-container relative grid items-center gap-10 py-16 md:grid-cols-2 md:gap-12 md:py-20">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            ตัวแทนประกันชีวิต AIA อย่างมืออาชีพ
-          </span>
+          <p className="eyebrow">ตัวแทนประกันชีวิต AIA</p>
 
-          <h1 className="mt-5 text-[1.75rem] font-semibold leading-snug text-slate-900 sm:text-3xl md:text-[2rem] lg:text-[2.25rem]">
+          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
             วางแผนประกัน
-            <span className="gradient-text block">เพื่ออนาคตที่มั่นคง</span>
+            <span className="mt-1 block text-primary">เพื่ออนาคตที่มั่นคง</span>
           </h1>
 
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-text-muted md:text-base">
             {MAIN_CONTACT.name} พร้อมให้คำปรึกษาด้านประกันชีวิตและประกันสุขภาพ
             ด้วยผลิตภัณฑ์จาก AIA ที่ได้รับความไว้วางใจ
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:-translate-y-0.5 hover:bg-primary-hover"
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={LINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
             >
-              ปรึกษาฟรี
-            </Link>
-            <Link
-              href="#products"
-              className="inline-flex items-center rounded-xl border border-border bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-primary/30 hover:text-primary"
-            >
+              คุยทาง LINE
+            </a>
+            <Link href="#products" className="btn-secondary">
               ดูผลิตภัณฑ์
             </Link>
           </div>
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <div className="relative w-full max-w-sm overflow-hidden rounded-3xl shadow-2xl shadow-primary/15 sm:max-w-md">
+          <div className="card w-full max-w-sm overflow-hidden border-primary/20 sm:max-w-md">
             <div className="relative aspect-[5/4]">
               <Image
                 src="/images/goals/goal-life.jpg"
-                alt="ที่ปรึกษาประกันชีวิต AIA ให้คำปรึกษาลูกค้า"
+                alt="ที่ปรึกษาประกันชีวิต AIA"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
-                <p className="text-xs font-medium uppercase tracking-wider text-white/80">
-                  AIA Khun Nan
-                </p>
-                <p className="mt-1 font-heading text-lg font-semibold leading-snug sm:text-xl">
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                <p className="text-xs text-white/70">AIA Khun Nan</p>
+                <p className="mt-1 font-heading text-lg font-semibold">
                   {MAIN_CONTACT.name}
                 </p>
-                <p className="mt-1 text-sm text-white/85">
+                <p className="mt-0.5 text-sm text-white/80">
                   ตัวแทนประกันชีวิต · ที่ปรึกษาการเงิน
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 divide-x divide-border bg-white">
+            <div className="grid grid-cols-3 divide-x divide-primary/10 bg-primary-light/30">
               {HIGHLIGHTS.map((item) => (
                 <div key={item.label} className="px-2 py-4 text-center">
-                  <p className="font-heading text-base font-bold text-primary sm:text-lg">
+                  <p className="font-heading text-base font-bold text-primary">
                     {item.value}
                   </p>
                   <p className="mt-0.5 text-[10px] leading-tight text-text-muted sm:text-xs">

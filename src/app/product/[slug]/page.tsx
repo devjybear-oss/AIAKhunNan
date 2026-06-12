@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import Button from "@/components/Button";
+import ContentBlock from "@/components/ContentBlock";
+import DetailPageLayout from "@/components/DetailPageLayout";
+import PageCTA from "@/components/PageCTA";
 import PageHero from "@/components/PageHero";
+import PillLink from "@/components/PillLink";
 import {
   PLANNING_SERVICES,
   getServiceBySlug,
@@ -37,6 +39,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <PageHero
         title={service.title}
         subtitle={service.subtitle}
+        eyebrow="บริการวางแผน"
         breadcrumb={[
           { label: "หน้าแรก", href: "/" },
           { label: "บริการ", href: "/product" },
@@ -44,72 +47,66 @@ export default async function ServiceDetailPage({ params }: Props) {
         ]}
       />
 
-      <section className="py-14 md:py-16">
-        <div className="section-container">
-          <div className="mx-auto grid max-w-4xl gap-10">
-            <div className="flex items-start gap-5 rounded-2xl border border-primary/15 bg-primary-light/30 p-6 md:p-8">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-3xl shadow-sm">
-                {service.icon}
-              </span>
-              <p className="text-base leading-relaxed text-slate-700">
-                {service.summary}
-              </p>
-            </div>
+      <DetailPageLayout
+        sidebar={{
+          title: "สนใจบริการนี้?",
+          description: "ปรึกษาฟรี ไม่มีค่าใช้จ่าย เราช่วยวิเคราะห์และออกแบบแผนตามเป้าหมายของคุณ",
+          backLink: {
+            label: "← กลับหน้าบริการทั้งหมด",
+            href: "/product",
+          },
+        }}
+      >
+        <div className="card flex items-start gap-5 p-6 md:p-8">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-light text-3xl">
+            {service.icon}
+          </span>
+          <p className="text-base leading-relaxed text-slate-700">
+            {service.summary}
+          </p>
+        </div>
 
-            <div className="space-y-5 text-base leading-relaxed text-text-muted">
-              {service.description.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+        <ContentBlock title="รายละเอียดบริการ">
+          <div className="content-prose">
+            {service.description.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </ContentBlock>
+
+        <ContentBlock title="สิ่งที่คุณจะได้รับ">
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {service.highlights.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2 text-sm text-slate-700"
+              >
+                <span className="mt-0.5 text-primary">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </ContentBlock>
+
+        {service.relatedProducts && service.relatedProducts.length > 0 && (
+          <ContentBlock title="ผลิตภัณฑ์ที่เกี่ยวข้อง" borderTop>
+            <div className="flex flex-wrap gap-2">
+              {service.relatedProducts.map((product) => (
+                <PillLink key={product.href} href={product.href}>
+                  {product.label}
+                </PillLink>
               ))}
             </div>
+          </ContentBlock>
+        )}
+      </DetailPageLayout>
 
-            <div className="rounded-2xl border border-border bg-white p-6 md:p-8">
-              <h2 className="mb-4 font-[family-name:var(--font-prompt)] text-lg font-semibold text-slate-900">
-                สิ่งที่คุณจะได้รับ
-              </h2>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {service.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-slate-700"
-                  >
-                    <span className="mt-0.5 text-primary">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {service.relatedProducts && service.relatedProducts.length > 0 && (
-              <div>
-                <h2 className="mb-4 font-[family-name:var(--font-prompt)] text-lg font-semibold text-slate-900">
-                  ผลิตภัณฑ์ที่เกี่ยวข้อง
-                </h2>
-                <div className="flex flex-wrap gap-3">
-                  {service.relatedProducts.map((product) => (
-                    <Link
-                      key={product.href}
-                      href={product.href}
-                      className="rounded-full border border-primary/25 bg-primary-light/50 px-5 py-2 text-sm font-medium text-primary transition hover:bg-primary hover:text-white"
-                    >
-                      {product.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="flex flex-wrap gap-3 border-t border-border pt-8">
-              <Button href="/contact">ปรึกษาบริการนี้</Button>
-              <Link
-                href="/product"
-                className="inline-flex items-center rounded-md border border-border px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-primary/30 hover:text-primary"
-              >
-                ← กลับหน้าบริการทั้งหมด
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageCTA
+        title="พร้อมเริ่มวางแผนแล้วหรือยัง?"
+        description="ปรึกษาฟรี ไม่มีค่าใช้จ่าย เราพร้อมช่วยวิเคราะห์และเสนอแผนที่เหมาะกับคุณ"
+        primary={{ label: "ปรึกษาบริการนี้", href: "/contact" }}
+        secondary={{ label: "ดูบริการทั้งหมด", href: "/product" }}
+      />
     </>
   );
 }
